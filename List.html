@@ -1,150 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List</title>
-    <style>
-                ::-webkit-scrollbar {
-            width: 7px;
-          }
-          
-          
-          ::-webkit-scrollbar-track {
-            background: #333333; 
-          }
-           
-          
-          ::-webkit-scrollbar-thumb {
-            background: rgb(58, 58, 58); 
-          }
-          
-          
-          ::-webkit-scrollbar-thumb:hover {
-            background: rgb(58, 58, 58); 
-          }
-      
-        html{
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #202020;
-            color: #bebebe;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List</title>
+  <style>
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
 
-        ul{
-            font-weight: bold;
-        }
 
-        button{
-            background-color: rgb(255, 255, 255);
-            border-radius: 0.5em;
-            font-weight: bold;
-            filter: drop-shadow(1px 1px 1px #000);
-        }
+    ::-webkit-scrollbar-track {
+      background: #333333;
+    }
 
-        button:hover{
-            background-color: rgb(182, 182, 182);
-        }
 
-        .container-media{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5%;
-        }
+    ::-webkit-scrollbar-thumb {
+      background: rgb(58, 58, 58);
+    }
 
-        img{
-            height: auto;
-            width: 96px;
-            align-items: center;
-        }
 
-        body{
-            
-        }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(58, 58, 58);
+    }
 
-        .container{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+    html {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #202020;
+      color: #bebebe;
+    }
 
-        }
+    ul {
+      font-weight: bold;
+    }
 
-        .container{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 90vw;
-            max-width: 38.5em;
-            margin: auto;
 
-        }
+    .container-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5%;
+    }
 
-        .c{
-            padding-top: 1.5em;
-            padding-bottom: 2em;
-        }
+    img {
+      height: auto;
+      width: 96px;
+      align-items: center;
+    }
 
-        hr{
-            width: 90vw;
-            max-width: 40em;
-        }
+    body {}
 
-        .c-over{
-            list-style: none;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-        .c-total1, .c-total2, .c-total3{
-            margin-top: 0.5em;
-        }
+    }
 
-        .c-li{
-            list-style: decimal;
-        }
-         
-        hr{
-            margin-top: 1.5em;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 90vw;
+      max-width: 38.5em;
+      margin: auto;
 
-        }
+    }
 
-        li{
-            padding: 0.1em;
-        }
+    .c {
+      padding-top: 1.5em;
+      padding-bottom: 2em;
+    }
 
-        .popup {
+    hr {
+      width: 90vw;
+      max-width: 40em;
+    }
+
+    .c-over {
+      list-style: none;
+    }
+
+    .c-total1,
+    .c-total2,
+    .c-total3 {
+      margin-top: 0.5em;
+    }
+
+    .c-li {
+      list-style: decimal;
+    }
+
+    hr {
+      margin-top: 1.5em;
+
+    }
+
+    li {
+      padding: 0.1em;
+    }
+
+    #dialog {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: none;
+      background-color: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
     }
 
-    .popup .content {
-      position: relative;
-      background-color: white;
-      width: 400px;
-      max-width: 80%;
-      margin: 0 auto;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .popup .close {
+    #dialog-content {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      color: white;
-      font-size: 20px;
+      top: 50%;
+      left: 50%;
+      width: 80vw;
+      max-height: 60vh;
+      background-color: #202020;
+      padding: 20px;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+      border-radius: 0.6em;
+      text-size: 5em;
+      border: 1px solid white;
+    }
+
+    button {
+      background-color: white;
+      backdrop-filter: blur(10px);
+      color: black;
+      padding: 10px;
+      border-radius: 0.6em;
       cursor: pointer;
     }
-    </style>
-    
+
+    .c-libox {
+      list-style: ;
+      padding: 0.6em;
+    }
+
+    .c-aa{
+      color: White;
+    }
+  </style>
+
 </head>
+
 <body>
 
-<div class="c">
+  <div class="c">
 
 
 
@@ -152,91 +160,180 @@
     <div class="container">
 
       <div>
-         <h2>
-Wishlist 
-</h2>
+        <h2>
+          Wishlist
+        </h2>
 
       </div>
-      
 
 
-        <div class="container">
+
+      <div class="container">
         <ul style="font-weight: bold; font-size: 24px;">Pc</ul>
 
-          <ul>
-             <li style="list-style: none; font-size: 20px"> Option 1</li>
-            <li style="list-style: none; font-size: 14px margin: 4em;">Opsi dimana spesifikasi pc udah cukup untuk ilo, PC nya juga dipake untuk edit video, hidup 24 jam (kalo lagi butuh), diruangan yang ga selalu dingin juga.</li>
-          </ul>
-          
-          
-          
-        <li class="c-li"><span style="color: white;">PROSESOR</span> Intel Core i5 13500 Rp 3.859.000 <a href="https://tokopedia.link/tgReeEfmcCb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">MOTHERBOARD</span> Gigabyte B760M Aorus Elite Rp 3.085.000 <a href="https://tokopedia.link/mYqFXIklgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">VGA</span> Asus Geforce RTX 3060 Ti 8GB Rp 6.599.000 <a href="https://tokopedia.link/eU3qya7SBBb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">RAM</span> Kingston Fury Beast Rgb DDR5 16GB Kit Rp 1.699.000 <a href="https://tokopedia.link/5LokcV7SBBb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">SSD</span> Kingston KC3000 PCIe Gen4x4 NVME 512GB Rp 873.000 <a href="https://tokopedia.link/XKtoAaUlyBb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">SSD</span> Team Group T-Force Vulcan 1TB Rp 699.000 <a href="https://tokopedia.link/2Yqf99slgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">CPU COOLER</span> Deepcool LT520 Rp 1.475.000<a href="https://tokopedia.link/CKNEWCkhcCb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">PSU</span> Mpg A750GF White Edition Rp 1.870.000<a href="https://tokopedia.link/Op1gMWAmyBb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">MONITOR</span> Gigabyte G27F Rp 3.779.000 <a href="https://tokopedia.link/heRFS2oFNBb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color: white;">CASE</span> Msi Mag Forge M100R Rp 745.000<a href="https://tokopedia.link/VyLvyW9SBBb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <ul>
+          <li style="list-style: none; font-size: 20px"> Option 1</li>
+          <li style="list-style: none; font-size: 14px margin: 4em;">Opsi dimana spesifikasi pc udah cukup untuk ilo, PC
+            nya juga dipake untuk edit video, hidup 24 jam (kalo lagi butuh), diruangan yang ga selalu dingin juga.</li>
+        </ul>
+
+
+
+        <li class="c-li"><span style="color: white;">PROSESOR</span> Intel Core i5 13500 Rp 3.859.000 <a
+            href="https://tokopedia.link/tgReeEfmcCb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">MOTHERBOARD</span> Gigabyte B760M Aorus Elite Rp 3.085.000 <a
+            href="https://tokopedia.link/mYqFXIklgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">VGA</span> Asus Geforce RTX 3060 Ti 8GB Rp 6.599.000 <a
+            href="https://tokopedia.link/eU3qya7SBBb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">RAM</span> Kingston Fury Beast Rgb DDR5 16GB Kit Rp 1.699.000 <a
+            href="https://tokopedia.link/5LokcV7SBBb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">SSD</span> Kingston KC3000 PCIe Gen4x4 NVME 512GB Rp 873.000 <a
+            href="https://tokopedia.link/XKtoAaUlyBb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">SSD</span> Team Group T-Force Vulcan 1TB Rp 699.000 <a
+            href="https://tokopedia.link/2Yqf99slgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">CPU COOLER</span> Deepcool LT520 Rp 1.475.000<a
+            href="https://tokopedia.link/CKNEWCkhcCb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">PSU</span> Mpg A750GF White Edition Rp 1.870.000<a
+            href="https://tokopedia.link/Op1gMWAmyBb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">MONITOR</span> Gigabyte G27F Rp 3.779.000 <a
+            href="https://tokopedia.link/heRFS2oFNBb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color: white;">CASE</span> Msi Mag Forge M100R Rp 745.000<a
+            href="https://tokopedia.link/VyLvyW9SBBb" target="_blank"><img src="tokped.png" alt=""></a></li>
         <div class="c-total1">
-        <li style="list-style: none;"> <strong>Total: 24.723.000 <a href="https://www.tokopedia.com/wishlist/collection/4530319" target="_blank">Whishlist</a></strong></li>
-        
-        </div>
-        </div>
+          <li style="list-style: none;"> <strong>Total: 24.723.000 <a
+                href="https://www.tokopedia.com/wishlist/collection/4530319" target="_blank">Whishlist</a></strong></li>
 
-          
+        </div>
+      </div>
 
-        <div class="container">
-        
+
+
+      <div class="container">
+
         <ul style="font-weight: bold; font-size: 24px;">Peripherals</ul>
-        <li class="c-li"><span style="color:white;">MOUSE</span> Rexus Daxa Air IV Wireless - White Rp 859.000 <a href="https://tokopedia.link/a6KGTLNStBb" target="_blank"> <img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color:white;">KEYBOARD</span> Rexus Daxa M82X Ultimate - White Rp 1.440.000<a href="https://tokopedia.link/N9UruJdjDBb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color:white;">HEADSET</span> Logitech G733 Lightspeed - White Rp 1.669.000 <a href="https://tokopedia.link/hEzuqiBlgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
-        <li class="c-li"><span style="color:white;">DESKMAT</span> Tenjin Scrollworks - KANSHA Light Rp 269.000 <a href="https://tokopedia.link/agVn0hFlgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color:white;">MOUSE</span> Rexus Daxa Air IV Wireless - White Rp 859.000 <a
+            href="https://tokopedia.link/a6KGTLNStBb" target="_blank"> <img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color:white;">KEYBOARD</span> Rexus Daxa M82X Ultimate - White Rp 1.440.000<a
+            href="https://tokopedia.link/N9UruJdjDBb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color:white;">HEADSET</span> Logitech G733 Lightspeed - White Rp 1.669.000 <a
+            href="https://tokopedia.link/hEzuqiBlgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
+        <li class="c-li"><span style="color:white;">DESKMAT</span> Tenjin Scrollworks - KANSHA Light Rp 269.000 <a
+            href="https://tokopedia.link/agVn0hFlgDb" target="_blank"><img src="tokped.png" alt=""></a></li>
         <div class="c-total2">
-         <li style="list-style: none;"><strong>Total:  <span style="color: #ffffff;">4.237.000 </span><a href="https://www.tokopedia.com/wishlist/collection/4503780" target="_blank">Whishlist</a></strong> (ada tambahan optional)</li>
-        <li style="list-style: none;"></li>
+          <li style="list-style: none;"><strong>Total: <span style="color: #ffffff;">4.237.000 </span><a
+                href="https://www.tokopedia.com/wishlist/collection/4503780" target="_blank">Whishlist</a></strong> (ada
+            tambahan optional)</li>
+          <li style="list-style: none;"></li>
 
           <ul>
-             Tambahan
+            Tambahan
           </ul>
-          <li style="list-style: ;">Ikea ALEX/LAGKAPTEN ukuran apa aja <a href="https://www.ikea.co.id/en/products/home-workspace/home-desks/alex-lagkapten-spr-09416820"></a></li>
-          
-          
-          
-          
-         
+          <li style="list-style: ;">Ikea ALEX/LAGKAPTEN ukuran apa aja <a
+              href="https://www.ikea.co.id/en/products/home-workspace/home-desks/alex-lagkapten-spr-09416820"></a></li>
+
+
+
+
+
         </div>
-            
-        
+
+
 
         <div class="container">
-            <ul>pls..</ul>
-            <li class="c-li" style="list-style: none;">Iphone 13/14 Pro Max 256GB diskon di eraspace.</li>
-            <li class="c-li" style="list-style: none;"><span>kalo bisa iphone 15 Pro series, tapi kalo bisa sih minimal iphone 13 pro max.</span></li>
+          <ul>pls..</ul>
+          <li class="c-li" style="list-style: none;">Iphone 13/14 Pro/Max 256GB diskon di eraspace.</li>
+          <li class="c-li" style="list-style: none;"><span>kalo bisa iphone 15 Pro series, tapi kalo bisa sih minimum 
+              iphone 13 pro max.</span></li>
         </div>
 
-          <hr />
+        <hr />
 
-          <div class="container">
+        <div class="container">
 
-            <ul>
-             <li style="list-style: none; font-size: 20px"> Option 2</li>
-            <li style="list-style: none; font-size: 14px margin: 4em;">Opsi yang dimana menyesuaikan budget yang akan di kasih</li>
-            </ul>
-            
-          </div>
-          
-    
+          <ul>
+            <li style="list-style: none; font-size: 20px"> Option 2</li>
+            <li style="list-style: none; font-size: 14px margin: 4em;">Opsi yang dimana menyesuaikan budget yang akan di
+              kasih</li>
+          </ul>
 
+        </div>
+
+        <hr />
 
         <div class="c-daftar">
 
-           </div>
-    </div>
+         <p>
+            Gitulahhhhhhh kalo butuh yang mendetaill
+         
+          <button onclick="showDialog()">open</button>
 
+           
+         </p>
+           
+  <div id="dialog">
+    <div id="dialog-content" style="overflow: scroll; ">
+      <h2>Yaaaaaaaa</h2>
+      <p>Ilo minta ini biar ada kerjaan, dirumah setress doang krna ga ngapa ngapain..</p>
+      <ul>
+         <li class="c-libox" style="list-style: none;">kerjaan yang sekarang bisa ilo kerjain cuma ngedit video terus upload ke Youtube </li>
+        <li class="c-libox">
+          <a href="https://www.youtube.com/@_12d" class="c-aa">@_12d</a> untuk copyright content & GMV - AMV.
+        </li>
+        <li class="c-libox" >
+          <a href="https://www.youtube.com/@Pirlo912" class="c-aa">@Pirlo912</a> Nnt klo dah dapet PC (yg di wishlist), Konsepnya mau dibuat macam <a href="https://www.youtube.com/@MILYHYA" class="c-aa">@MILYHYA</a> Kalo utk ilo, nanti tiap videonya di kasih editan GMV klo main game.
+        </li>
+        <li class="c-libox" >
+          <a href="https://www.youtube.com/@Seek3rrrr" class="c-aa">@Seek3rrrr</a> Msh ga tau mau lanjut/enga.
+        </li>
+      </ul>
+
+      <h3>
+         Listttttt
+      </h3>
+      
+      <li class="c-libox">PC Rp 28.960.000; minta pc krna laptop yang di pake sekarang blue screen mulu, ga kuat utk record, ga kuat utk edit video apalagi photo. <a href="https://www.tokopedia.com/wishlist/collection/4530319" class="c-aa">PC</a> & <a href="https://www.tokopedia.com/wishlist/collection/4503780" class="c-aa">Peripheral</a></li>
+      
+      <li class="c-libox">Iphone 13/ 14/ 15 Pro/Max (256GB) [Sierra Blue/Silver] Rp 15.999.000 - 20.499.000; Minta hp untuk gantiin hp yang sekarang, hp yang sekarang udah kurang untuk sekolah, dll. Storage 64GB always fulllll..... <a href="https://eraspace.com/eraspace/produk/apple-iphone-13-pro-max" class="c-aa">Iphone 13 PRO MAX</a>/<a href="https://eraspace.com/eraspace/produk/apple-iphone-14-pro" class="c-aa">Iphone 14 PRO MAX</a> 15 series blm ada di Indonesia.</li>
+      
+      <li class="c-libox">Ikea ALEX/LAGKAPTEN 120x60cm atau 140x60cm [White] Rp 1.889.000; butuh bgt meja-kursi <a href="https://www.ikea.co.id/en/products/home-workspace/home-desks/alex-lagkapten-spr-09416820" class="c-aa">
+      Mejaa</a></li>
+
+      <li class="c-libox">Sepatu Nike Air Force 1 '07 (EU 45) [White] Rp 1.549.000; pengennnnnn. <a href="https://www.nike.com/id/t/air-force-1-07-shoes-WrLlWX/CW2288-111" class="c-aa">Air Force 1</a></li>
+
+      <li class="c-libox">Motor Yamaha Aerox Connected/ABS [Maxi Signature] 😆😆 Rp 30.960.000; untuk keluar rumah, main, sekolah, dll. <a href="https://www.yamaha-motor.co.id/product/all-new-aerox155-connected/" class="c-aa">Motorrr</a> </li>
+                      
+      <li class="c=libox">
+        Uang jajan sekalian yaaa... 
         
+      </li>
+
+      <li style="list-style: none;">
+        ini semua yang ilo mau udah tertunda dari bulan april lalu
+        
+      </li>
+      
+      
+      <ul>
+         
+      </ul>
+      
+      <button onclick="closeDialog()">Close</button>
+    </div>
+    
+  </div>
+
+  <script>
+    function showDialog() {
+      document.getElementById("dialog").style.display = "block";
+    }
+
+    function closeDialog() {
+      document.getElementById("dialog").style.display = "none";
+    }
+  </script>
+        </div>
+      </div>
+
+
 </body>
-    </html>
+</html>
